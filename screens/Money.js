@@ -8,7 +8,7 @@ export default class Money extends React.Component {
 		super();
 		this.state={
 			stateCost:'',
-			countDailyCost:'',
+			countDailyCost:0,
 			daliyCost:'',
 			alwaysCost:'',
 			dateCount:0,
@@ -34,7 +34,7 @@ export default class Money extends React.Component {
 				alwaysCost:results[2].alwaysCost,
 				dateCount:results[0].dateCount,
 				monthAllCost:results[0].monthAllCost,
-				countDailyCost:results[3].countDailyCost,
+				countDailyCost:parseInt(results[3].countDailyCost),
 			})
 		}).catch(err => {
 			console.log(err.message);
@@ -171,6 +171,7 @@ export default class Money extends React.Component {
 				</View>
 				<View style={{marginTop:20}}>
 					<Text style={{fontSize:20,marginTop:12}}>你每天的伙食费为{this.state.daliyCost}</Text>
+					<Text style={{fontSize:20,marginTop:12}}>你今天已经花了{this.state.countDailyCost}</Text>
 					<InputItem
 						value={this.state.stateCost}
 						onChange={(value) => {

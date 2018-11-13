@@ -8,7 +8,7 @@ var IsEmpty = function(keys){
         }else{
             keys == "";
         }
-        if (keys == "" || keys == null || keys == 'null' || keys == undefined || keys == 'undefined') {
+        if (keys == "" || keys == null || keys == 'null' || keys == undefined || keys == 'undefined'||keys == []) {
             return true
         } else {
             return false
